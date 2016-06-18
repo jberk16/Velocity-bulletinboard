@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose')
 var sessions = require('client-sessions')
 
-var dbUrl = 'mongodb://localhost/bulletinboard'
+var dbUrl = process.env.MONGODB_URI || 'mongodb://localhost/bulletinboard'
 mongoose.connect(dbUrl, function(err, res){
   if (err)
     console.log('DB CONNECTION FAIL: '+err)
